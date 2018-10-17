@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <SourceSelection />
-    <NewsList />
+    <NewsList v-bind:source="source" />
   </div>
 </template>
 
@@ -14,7 +14,12 @@ export default {
   components: {
     SourceSelection,
     NewsList
-  }
+  },
+   data () {
+     return {
+       source: ''
+     }
+   }
 }
 </script>
 
