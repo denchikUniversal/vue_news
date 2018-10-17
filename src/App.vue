@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <SourceSelection />
+    <SourceSelection v-on:sourceChanged="sourceChanged" />
     <NewsList v-bind:source="source" />
   </div>
 </template>
@@ -18,6 +18,11 @@ export default {
    data () {
      return {
        source: ''
+     }
+   },
+   methods: {
+     sourceChanged: function (source) {
+       this.source = source;
      }
    }
 }
